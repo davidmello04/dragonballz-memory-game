@@ -6,7 +6,7 @@ Teste sua memória enquanto coincide os pares de cartas e desfruta da trilha son
 
 ## Screenshots
 
-!Tela Inicial![Image](https://github.com/davidmello04/dragonballz-memory-game/assets/102268159/bc4a77a6-3cfd-4ace-a39e-beb14fc68321)
+![Tela Inicial](https://github.com/davidmello04/dragonballz-memory-game/assets/102268159/bc4a77a6-3cfd-4ace-a39e-beb14fc68321)
 
 ![Jogabilidade](https://github.com/davidmello04/dragonballz-memory-game/assets/102268159/dc94ea3c-a31b-4d87-af74-587ed933c87e)
 
