@@ -14,23 +14,23 @@ Teste sua memória enquanto coincide os pares de cartas e desfruta da trilha son
 
 
 
-# Características
+## Características
 Jogo clássico da memória com temática Dragon Ball Z.  
 Trilha sonora épica do tema para uma experiência imersiva.  
 Interface intuitiva e amigável.  
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - HTML  
 - CSS  
 - JavaScript  
 
-# Como Jogar
+## Como Jogar
 Clone este repositório para o seu computador: git clone https://github.com/davidmello04/dragonballz-memory-game.git  
 Navegue até a pasta do projeto: cd dragonballz-memory-game  
 Abra o arquivo index.html no seu navegador.
 
-# Contribuição
+## Contribuição
 Contribuições são bem-vindas! Se você quiser melhorar este jogo.
 
-# Autor
+## Autor
 David Bezerra de Melo [davidmello04](https://github.com/davidmello04) - Criador do dragonballz-memory-game.
