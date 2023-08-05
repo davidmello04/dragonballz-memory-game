@@ -19,7 +19,7 @@ JavaScript
 
 # Como Jogar
 Clone este repositório para o seu computador: git clone https://github.com/davidmello04/dragonballz-memory-game.git  
-Navegue até a pasta do projeto: cd jogo-da-memoria-dragonball-z  
+Navegue até a pasta do projeto: cd dragonballz-memory-game  
 Abra o arquivo index.html no seu navegador.
 
 # Contribuição
