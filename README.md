@@ -5,7 +5,7 @@ Este é um projeto divertido de um jogo da memória temático baseado na popular
 Teste sua memória enquanto coincide os pares de cartas e desfruta da trilha sonora emocionante do tema.
 
 # Demonstração
-
+![image](https://github.com/davidmello04/dragonballz-memory-game/assets/102268159/bc4a77a6-3cfd-4ace-a39e-beb14fc68321)
 
 # Características
 Jogo clássico da memória com temática Dragon Ball Z.  
