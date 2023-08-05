@@ -1,6 +1,8 @@
 # dragonballz-memory-game
 
-Bem-vindo ao Jogo da Memória Dragon Ball Z! Este é um projeto divertido de um jogo da memória temático baseado na popular série de anime Dragon Ball Z. Teste sua memória enquanto coincide os pares de cartas e desfruta da trilha sonora emocionante do tema.
+Bem-vindo ao Jogo da Memória Dragon Ball Z!  
+Este é um projeto divertido de um jogo da memória temático baseado na popular série de anime Dragon Ball Z.  
+Teste sua memória enquanto coincide os pares de cartas e desfruta da trilha sonora emocionante do tema.
 
 # Demonstração
 
@@ -16,8 +18,8 @@ CSS
 JavaScript  
 
 # Como Jogar
-Clone este repositório para o seu computador: git clone https://github.com/davidmello04/dragonballz-memory-game.git
-Navegue até a pasta do projeto: cd jogo-da-memoria-dragonball-z
+Clone este repositório para o seu computador: git clone https://github.com/davidmello04/dragonballz-memory-game.git  
+Navegue até a pasta do projeto: cd jogo-da-memoria-dragonball-z  
 Abra o arquivo index.html no seu navegador.
 
 # Contribuição
