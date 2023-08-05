@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/game.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/animacao.css">
+
+    <script defer src="../js/game.js"></script>
+
+    <title>DragonBall Z | Memory Game</title>
+</head>
+<body>
+    
+    <main>
+
+        <div class="modal-overlay" id="modal">
+            <div class="modal">
+                
+                <div class="image-container">
+                    <img src="../images/esferas.png" alt="Imagem" class="rotating-image">
+                </div>
+              
+                <h2>Parabéns, <span id="modalPlayerName"></span>!</h2>
+                <p>Seu tempo foi: <span id="modalTimer"></span></p>
+                <button id="restartBtn" class="btn">Reiniciar</button>
+                <button id="modalCloseBtn" class="btn">Fechar</button>
+            </div>
+        </div>
+
+        <button id="btn-menu">< Voltar ao Menu</button>
+       
+        <header>
+            <span class="player"></span>
+            <span>Tempo: <span class="timer"></span></span>
+        </header>
+
+        <div class="grid"></div>
+    </main>
+
+</body>
+</html>
