@@ -20,9 +20,9 @@ Trilha sonora épica do tema para uma experiência imersiva.
 Interface intuitiva e amigável.  
 
 # Tecnologias Utilizadas
-HTML  
-CSS  
-JavaScript  
+- HTML  
+- CSS  
+- JavaScript  
 
 # Como Jogar
 Clone este repositório para o seu computador: git clone https://github.com/davidmello04/dragonballz-memory-game.git  
