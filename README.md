@@ -6,14 +6,14 @@ Bem-vindo ao Jogo da Memória Dragon Ball Z! Este é um projeto divertido de um 
 
 
 # Características
-Jogo clássico da memória com temática Dragon Ball Z.
-Trilha sonora épica do tema para uma experiência imersiva.
-Interface intuitiva e amigável.
+Jogo clássico da memória com temática Dragon Ball Z.  
+Trilha sonora épica do tema para uma experiência imersiva.  
+Interface intuitiva e amigável.  
 
 # Tecnologias Utilizadas
-HTML
-CSS
-JavaScript
+HTML  
+CSS  
+JavaScript  
 
 # Como Jogar
 Clone este repositório para o seu computador: git clone https://github.com/davidmello04/dragonballz-memory-game.git
