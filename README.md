@@ -1,6 +1,6 @@
 # dragonballz-memory-game
 
-Bem-vindo ao Jogo da Memória Dragon Ball Z!  
+Bem-vindo ao Jogo da Memória Dragon Ball Z!  \
 Este é um projeto divertido de um jogo da memória temático baseado na popular série de anime Dragon Ball Z.  
 Teste sua memória enquanto coincide os pares de cartas e desfruta da trilha sonora emocionante do tema.
 
