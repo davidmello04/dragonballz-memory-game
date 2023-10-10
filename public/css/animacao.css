@@ -1,43 +1,47 @@
 @keyframes animacao {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
 }
-  
-  .imagem-animada {
-    width: 100px; 
-    height: 100px; 
+
+.imagem-animada {
+    height: 100px;
     animation: animacao 4s linear infinite;
     margin-bottom: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .imagem-animada img {
-    width: 300px;
-    max-width: 55vw;
-  }
-  
-  @keyframes rotate {
-      from {
-          transform: rotate(0deg); /* Inicie a rotação a partir de 0 graus */
-      }
-      to {
-          transform: rotate(360deg); /* Termine a rotação a 360 graus (uma volta completa) */
-      }
-  }
+}
 
-  .image-container {
+.imagem-animada img {
+    width: 250px;
+    max-width: 55vw;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg); /* Inicie a rotação a partir de 0 graus */
+    }
+    to {
+        transform: rotate(
+            360deg
+        ); /* Termine a rotação a 360 graus (uma volta completa) */
+    }
+}
+
+.image-container {
     width: 200px; /* Defina a largura e altura desejadas */
     height: 200px;
     padding: 10px;
     overflow: hidden; /* Para cortar a parte da imagem que se move para fora do container */
 }
 
- .rotating-image {
+.rotating-image {
     width: 90%;
     animation: rotate 10s linear infinite; /* Defina a animação 'rotate' com duração de 10 segundos */
     transform-origin: center center; /* Define o centro da imagem como o ponto de rotação */
 }
-
-

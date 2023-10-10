@@ -1,59 +1,118 @@
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 20px 50px;
-    width: 100%;
-    background-image: url('../images/fundo-game-3.jpg');
+:root {
+    --primary-color: #f34d00d2;
+}
+
+body {
+    background-image: url("../images/fundo-game-3.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     min-height: 100vh;
 }
 
-header {
+.main {
+    display: none;
+}
+
+.container {
+    display: flex;
+}
+
+.section-left {
+    width: 15%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-center {
+    width: 70%;
+    padding: 15px;
+}
+
+.section-right {
+    width: 15%;
+    padding: 15px;
+}
+
+.btn-game {
+    width: 90%;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 0.8em;
+    line-height: 1.5;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(240, 248, 255, 0.856);
+    /* border: 2px solid var(--primary-color); */
+    color: var(--primary-color);
+    box-shadow: 0 3px 4px rgba(5, 5, 5, 0.527);
+    text-shadow: 0 1px 1px rgba(5, 5, 5, 0.527);
+}
+
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f34d00d2;
+    background-color: var(--primary-color);
     color: aliceblue;
     font-size: 1.2em;
-    width: 100%;
-    max-width: 1100px;
+    width: auto;
     padding: 30px;
-    margin: 0 0 30px;
+    margin-bottom: 30px;
     border-radius: 5px;
 }
 
-#btn-menu {
+.scores {
+    width: 15%;
+    margin: 15px;
+    padding: 5px;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scores-title {
+    width: 100%;
     padding: 15px;
-    font-size: 1.1em;
-    background-color: rgba(240, 248, 255, 0.856);
+    text-align: center;
     border-radius: 5px;
-    border: 2px solid #f34d00d2;
-    color: #f34d00d2;
+    font-size: 1.2em;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.scores-player {
+    margin-top: 15px;
+    padding: 8px;
+    font-size: 0.8em;
+    line-height: 1.5;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(240, 248, 255, 0.856);
+    /* border: 2px solid var(--primary-color); */
+    color: var(--primary-color);
     box-shadow: 0 3px 4px rgba(5, 5, 5, 0.527);
     text-shadow: 0 1px 1px rgba(5, 5, 5, 0.527);
-    position: absolute;
-    left: 2%;
-    top: 6%;
-    cursor: pointer;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 14px;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-  }
+}
 
 .card {
     aspect-ratio: 3/4;
-    height: auto;
-    width: 100%;
+    width: 110px;
     border-radius: 5px;
     position: relative;
     transition: all 500ms ease;
@@ -79,7 +138,7 @@ header {
 }
 
 .back {
-    background-image: url('../images/fundo-card-4.jpg');
+    background-image: url("../images/fundo-card-4.jpg");
     backface-visibility: hidden;
 }
 
@@ -136,25 +195,106 @@ header {
     min-width: 100%;
 }
 
-
-@media (max-width: 768px) {
-    main {
-      background-position: top center;
-      padding: 15px 15px 30px;
+@media (max-width: 1200px) {
+    .header {
+        font-size: 1.1em;
     }
 
-    header {
-        font-size: 1em;
+    .btn-game {
+        word-break: break-all;
+        padding: 5px;
+        font-size: 0.6em;
+        min-width: 100%;
+    }
+
+    .scores-player {
+        font-size: 0.7em;
+    }
+
+    .scores-title {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 769px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .scores {
+        display: none;
+    }
+
+    .section-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .section-center {
+        width: auto;
+        padding: 0;
+        font-size: 0.7em;
+    }
+
+    .section-right {
+        width: auto;
+        padding: 15px;
+    }
+
+    .btn-game {
+        font-size: 0.8em;
+        min-height: 45px;
+        padding: 5px;
+        min-width: 50%;
+        margin: 5px;
+        line-height: 1.4;
+    }
+
+    .header {
+        height: 60px;
+        font-size: 1.2em;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 0;
+        line-height: 1.4;
+        justify-content: space-between;
+    }
+
+    .player {
+        word-break: break-all;
     }
 
     .grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 10px;
-      }
-
-      .face {
-        border: 3px solid #ff4b14;
+        padding: 30px 6px;
+        gap: 7px;
     }
-  }
 
-  
+    .card {
+        width: 70px;
+    }
+
+    .main {
+        display: flex;
+        z-index: 1;
+    }
+
+    .face {
+        border: 3px solid var(--primary-color);
+    }
+
+    @media (max-width: 500px) {
+        .grid {
+            padding: 0px 6px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .btn-game {
+            font-size: 0.6em;
+        }
+    }
+}

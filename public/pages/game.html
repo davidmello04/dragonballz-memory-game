@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../css/game.css">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/animacao.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script defer src="../js/game.js"></script>
+        <link rel="stylesheet" href="../css/game.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/animacao.css" />
 
-    <title>DragonBall Z | Memory Game</title>
-</head>
-<body>
-    
-    <main>
+        <title>DragonBall Z | Memory Game</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="modal-overlay" id="modal">
+                <div class="modal">
+                    <div class="image-container">
+                        <img
+                            src="../images/esferas.png"
+                            alt="Imagem"
+                            class="rotating-image"
+                        />
+                    </div>
 
-        <div class="modal-overlay" id="modal">
-            <div class="modal">
-                
-                <div class="image-container">
-                    <img src="../images/esferas.png" alt="Imagem" class="rotating-image">
+                    <h2>Parabéns, <span id="modalPlayerName"></span>!</h2>
+                    <p>Seu tempo foi: <span id="modalTimer"></span></p>
+                    <button class="btn-restart btn">Reiniciar</button>
+                    <button id="modalCloseBtn" class="btn">Fechar</button>
                 </div>
-              
-                <h2>Parabéns, <span id="modalPlayerName"></span>!</h2>
-                <p>Seu tempo foi: <span id="modalTimer"></span></p>
-                <button id="restartBtn" class="btn">Reiniciar</button>
-                <button id="modalCloseBtn" class="btn">Fechar</button>
             </div>
+
+            <section class="section-left">
+                <button class="btn-main btn-game">Menu Inicial</button>
+
+                <button class="restart btn-game">Reiniciar</button>
+            </section>
+
+            <section class="section-center">
+                <header class="header">
+                    <span class="player"></span>
+                    <span>Tempo: <span class="timer"></span></span>
+                </header>
+
+                <div class="grid"></div>
+            </section>
+
+            <section class="section-right scores">
+                <span class="scores-title">Recordes</span>
+                <span class="scores-player">1º David - 375 pontos</span>
+                <span class="scores-player">2º Livia - 368 pontos</span>
+                <span class="scores-player">3º Diogo - 363 pontos</span>
+            </section>
         </div>
-
-        <button id="btn-menu">< Voltar ao Menu</button>
-       
-        <header>
-            <span class="player"></span>
-            <span>Tempo: <span class="timer"></span></span>
-        </header>
-
-        <div class="grid"></div>
-    </main>
-
-</body>
+        <script defer src="../js/game.js"></script>
+    </body>
 </html>
