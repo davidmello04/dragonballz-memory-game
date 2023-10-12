@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Seu código JavaScript aqui
     const grid = document.querySelector(".grid");
     const spanPlayer = document.querySelector(".player");
     const timer = document.querySelector(".timer");
     const btnMenu = document.querySelector(".btn-main");
     const restartBtn = document.querySelector(".restart");
+    const restartBtn2 = document.querySelector(".restart2");
 
     // Botão Voltar ao menu
     const handleBtnMenu = (event) => {
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnMenu.addEventListener("click", handleBtnMenu);
     restartBtn.addEventListener("click", handleBtnRestart);
+    restartBtn2.addEventListener("click", handleBtnRestart);
 
     // Personagens dos Cards
     const characters = [
@@ -113,6 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     modal.style.display = "none";
                     window.location = "../index.html";
                 });
+
+                finalScore();
             }
         }, 1000);
     };
@@ -161,6 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = createCard(character);
             grid.appendChild(card);
         });
+
+        currentTimerPoints();
     };
 
     // Função para crônometrar
@@ -198,6 +203,71 @@ document.addEventListener("DOMContentLoaded", function () {
         startTimer();
     };
 
+    // Função de Pontuação
+
+    let maxScore = 500;
+    let currentScore;
+    let scorePoints = 0;
+    let keysAll = Object.keys(localStorage);
+    let key = 0;
+
+    const lowerScore = () => {
+        maxScore--;
+        currentScore = maxScore;
+    };
+
+    const currentTimerPoints = () => setInterval(lowerScore, 1000);
+
+    // Função para calcular scores e verificar se entra no ranking
+    const finalScore = () => {
+        scorePoints = currentScore;
+
+        if (keysAll.length - 1 < 3) {
+            localStorage.setItem(spanPlayer.innerHTML, scorePoints);
+        } else if (keysAll.length - 1 >= 3) {
+            for (let i = 0; i < keysAll.length; i++) {
+                key = keysAll[i];
+
+                if (key !== "player") {
+                    pont = localStorage.getItem(key);
+                    pont = parseInt(pont);
+
+                    console.log(pont);
+
+                    if (scorePoints > pont) {
+                        localStorage.setItem(spanPlayer.innerHTML, scorePoints);
+                    }
+                }
+            }
+        }
+    };
+
+    // Função para listar scores
+
+    const scoresList = () => {
+        for (let i = 0; i < keysAll.length; i++) {
+            let final = 0;
+            let pont = 0;
+            let key = keysAll[i];
+            if (key !== "player") {
+                pont = localStorage.getItem(key);
+                pont = parseInt(pont);
+                final = key + " - " + pont + " pontos";
+                newRecord(final);
+            }
+        }
+    };
+
+    // Função para criar novo Recorde
+
+    function newRecord(text) {
+        const insertScores = document.getElementById("listScores");
+        const record = document.createElement("span");
+        record.className = "scores-player";
+        insertScores.appendChild(record);
+        record.innerHTML = text;
+    }
+
     // Audios do game
     let audioGame = new Audio("../audio/1-02 - Prologue & Subtitle 1.mp3");
     audioGame.loop = true;
@@ -221,6 +291,8 @@ document.addEventListener("DOMContentLoaded", function () {
         spanPlayer.innerHTML = capitalizedPlayerName;
 
         audioPlayGame(audioGame);
+
+        scoresList();
 
         cronTimer();
         loadGame();

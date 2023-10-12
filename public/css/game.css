@@ -63,6 +63,13 @@ body {
     border-radius: 5px;
 }
 
+#listScores {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .scores {
     width: 15%;
     margin: 15px;
@@ -84,6 +91,8 @@ body {
 }
 
 .scores-player {
+    text-align: center;
+    min-width: 100%;
     margin-top: 15px;
     padding: 8px;
     font-size: 0.8em;
@@ -235,7 +244,7 @@ body {
     }
 
     .section-center {
-        width: auto;
+        width: 100%;
         padding: 0;
         font-size: 0.7em;
     }
