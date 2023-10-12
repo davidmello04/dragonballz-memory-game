@@ -98,17 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 audioStopGame();
                 audioPlayGame(audioWin);
 
-                // Modal para mostrar tempo e pontuação após a finalização
+                // Modal
                 const modal = document.getElementById("modal");
                 const modalPlayerName =
                     document.getElementById("modalPlayerName");
                 const modalTimer = document.getElementById("modalTimer");
                 const modalCloseBtn = document.getElementById("modalCloseBtn");
-                const modalRecord = document.getElementById("modalRecord");
 
                 modalPlayerName.innerText = spanPlayer.innerHTML;
                 modalTimer.innerText = timer.innerHTML;
-                modalRecord.innerHTML = scorePoints;
 
                 modal.style.display = "flex";
                 btnMenu.style.display = "none";
