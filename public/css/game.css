@@ -91,10 +91,9 @@ body {
 }
 
 .scores-player {
-    text-align: center;
     min-width: 100%;
     margin-top: 15px;
-    padding: 8px;
+    padding: 10px;
     font-size: 0.8em;
     line-height: 1.5;
     border-radius: 5px;

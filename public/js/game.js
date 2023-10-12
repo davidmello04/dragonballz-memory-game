@@ -24,21 +24,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Personagens dos Cards
     const characters = [
         "android-17",
-        "vegeta",
-        "bulma",
-        "cell",
-        "Trunks",
-        "freeza",
-        "Gohan-Super-Saiyan",
-        "goku",
-        "kuririn",
-        "goten",
-        "MajinBuu",
-        "piccolo",
-        "mestre-kame",
-        "chichi",
-        "raditz",
-        "sr-kaioh",
+        // "vegeta",
+        // "bulma",
+        // "cell",
+        // "Trunks",
+        // "freeza",
+        // "Gohan-Super-Saiyan",
+        // "goku",
+        // "kuririn",
+        // "goten",
+        // "MajinBuu",
+        // "piccolo",
+        // "mestre-kame",
+        // "chichi",
+        // "raditz",
+        // "sr-kaioh",
     ];
 
     // Função para criar um elemento com classe
@@ -218,48 +218,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const currentTimerPoints = () => setInterval(lowerScore, 1000);
 
-    // Função para calcular scores e verificar se entra no ranking
-    const finalScore = () => {
-        scorePoints = currentScore;
-
-        if (keysAll.length - 1 < 3) {
-            localStorage.setItem(spanPlayer.innerHTML, scorePoints);
-        } else if (keysAll.length - 1 >= 3) {
-            for (let i = 0; i < keysAll.length; i++) {
-                key = keysAll[i];
-
-                if (key !== "player") {
-                    pont = localStorage.getItem(key);
-                    pont = parseInt(pont);
-
-                    console.log(pont);
-
-                    if (scorePoints > pont) {
-                        localStorage.setItem(spanPlayer.innerHTML, scorePoints);
-                    }
-                }
+    // Função para organizar ranking
+    let ranking = [];
+    const rankingScores = () => {
+        for (let i = 0; i < keysAll.length; i++) {
+            let key = keysAll[i];
+            if (key !== "player") {
+                let playerName = key;
+                let score = localStorage.getItem(key);
+                score = parseInt(score);
+                ranking.push({ playerName, score });
             }
         }
+        ranking.sort((a, b) => b.score - a.score);
+        console.log(ranking);
     };
 
     // Função para listar scores
-
     const scoresList = () => {
-        for (let i = 0; i < keysAll.length; i++) {
-            let final = 0;
-            let pont = 0;
-            let key = keysAll[i];
-            if (key !== "player") {
-                pont = localStorage.getItem(key);
-                pont = parseInt(pont);
-                final = key + " - " + pont + " pontos";
-                newRecord(final);
-            }
+        let final = 0;
+
+        rankingScores();
+
+        for (let i = 0; i < ranking.length; i++) {
+            let key = ranking[i];
+
+            let pos = ranking.indexOf(ranking[i]) + 1;
+            final = pos + "º " + key.playerName + " - " + key.score + " pts";
+            newRecord(final);
         }
     };
 
     // Função para criar novo Recorde
-
     function newRecord(text) {
         const insertScores = document.getElementById("listScores");
         const record = document.createElement("span");
@@ -267,6 +257,36 @@ document.addEventListener("DOMContentLoaded", function () {
         insertScores.appendChild(record);
         record.innerHTML = text;
     }
+
+    // Função para controlar o top 5 recordes
+    const topScores = () => {
+        let indexCalc = ranking.length - 1;
+        let index = ranking[indexCalc];
+        localStorage.removeItem(index.playerName);
+        localStorage.setItem(spanPlayer.innerHTML, scorePoints);
+    };
+
+    // Função para calcular scores e verificar se entra no ranking
+    const finalScore = () => {
+        scorePoints = currentScore;
+
+        if (keysAll.length - 1 < 5) {
+            localStorage.setItem(spanPlayer.innerHTML, scorePoints);
+        } else if (keysAll.length - 1 >= 5) {
+            for (let i = 0; i < keysAll.length; i++) {
+                key = keysAll[i];
+
+                if (key !== "player") {
+                    pont = localStorage.getItem(key);
+                    pont = parseInt(pont);
+
+                    if (scorePoints > pont) {
+                        topScores();
+                    }
+                }
+            }
+        }
+    };
 
     // Audios do game
     let audioGame = new Audio("../audio/1-02 - Prologue & Subtitle 1.mp3");
